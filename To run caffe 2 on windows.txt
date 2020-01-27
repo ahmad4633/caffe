@@ -1,0 +1,13 @@
+Prerequisites
+To successfully compile Caffe2 on Windows 10 with GPU support, the following prerequisites are mandatory:
+
+1-Windows 10: according to the official document, Windows 10 or greater is required to run Caffe2. For reference, I am using Windows 10 Pro with Creator Update installed.
+2-Visual Studio 2015 with Visual C++ and appropriate Windows SDK installed: compiling Caffe2 requires a compatible C++ compiler. Currently, CUDA 8.0 only supports up to Visual Studio 2015 with Update 3. If you use Visual Studio 2017 instead, you will not be able to enable GPU support.
+3-CUDA 8.0 with cuDNN installed: you can download and install them from NVIDIA's website. For more details you can refer to my previous post on configuring Keras on windows.
+4-Python 2.7: currently only Python 2.7 is supported. It is recommended to use Anaconda Python as it bundles necessary packages such as numpy, matplotlib, jupyter, etc., by default.
+5-CMake: required to configure and generate Visual Studio solutions. Its binaries should be added to your %PATH% environment variable.
+6-git: use git unless you want to manually download all the source files.
+The following Python packages are also required: numpy, protobuf, and future. The Anaconda installation should already include numpy. protobuf can be installed via pip. future can be install via either conda or pip. You can also check and install optional dependencies as listed in the official document.
+
+Obtain the Source Code and Apply Patches
+You need to first download the source files of Caffe2, which is pretty easy with git (assuming the git binary is in your %PATH%):    git clone --recursive https://github.com/caffe2/caffe2.git
